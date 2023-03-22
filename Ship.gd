@@ -39,8 +39,11 @@ func _physics_process(delta):
 	var direction = agent_position.direction_to(next_location)
 	
 	
-	velocity = speed * direction
-	agent.set_velocity(velocity)
+#	velocity = speed * direction
+	
+	var new_velocity = Utils.follow_with_steering(velocity, agent_position, next_location, speed)
+	
+	agent.set_velocity(new_velocity)
 	
 func _on_Ship_mouse_entered():
 	animation_player.play("mouse_over")
