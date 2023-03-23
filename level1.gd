@@ -28,7 +28,7 @@ func on_ship_clicked(instance):
 	current_ship = instance
 #	print("Current ship is now: " + instance.name)	
 	current_ship.clicked()
-	
+	 
 	print(current_ship)
 
 func mouse_over(instance):

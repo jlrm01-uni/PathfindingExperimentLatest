@@ -11,6 +11,7 @@ var velocity = Vector2.ZERO
 var speed = 200
 var target_position = null
 onready var sprite = $ShipA
+export (float) var slow_radius = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,9 +40,10 @@ func _physics_process(delta):
 	var direction = agent_position.direction_to(next_location)
 	
 	
-#	velocity = speed * direction
+#	var intended_velocity = speed * direction
 	
-	var new_velocity = Utils.follow_with_steering(velocity, agent_position, next_location, speed)
+#	var new_velocity = Utils.follow_with_steering(velocity, agent_position, next_location, speed, slow_radius)
+	var new_velocity = Utils.arrive_to(velocity, agent_position, next_location, target_position, speed, slow_radius)
 	
 	agent.set_velocity(new_velocity)
 	
