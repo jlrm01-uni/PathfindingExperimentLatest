@@ -81,6 +81,7 @@ shape = SubResource( 1 )
 path_desired_distance = 10.0
 target_desired_distance = 20.0
 avoidance_enabled = true
+max_speed = 500.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

@@ -8,14 +8,14 @@ onready var agent = $NavigationAgent2D
 onready var animation_player = $AnimationPlayer
 
 var velocity = Vector2.ZERO
-var speed = 800
+var speed = 200
 var target_position = null
 onready var sprite = $ShipA
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	yield(owner, "ready")
-
+	agent.max_speed = speed
 	get_tree().call_group("Level", "connect_ship_signals", self)
 
 func _on_Ship_input_event(viewport, event, shape_idx):
