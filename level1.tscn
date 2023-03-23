@@ -71,7 +71,7 @@ edge_connection_margin = 20.0
 [node name="Ship" parent="Navigation2D" instance=ExtResource( 2 )]
 position = Vector2( 363, 493 )
 ship_name = "Victor"
-slow_radius = 100.0
+slow_radius = 300.0
 
 [node name="Ship2" parent="Navigation2D" instance=ExtResource( 2 )]
 position = Vector2( 773, 449 )
