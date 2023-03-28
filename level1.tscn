@@ -76,6 +76,8 @@ slow_radius = 300.0
 [node name="Ship2" parent="Navigation2D" instance=ExtResource( 2 )]
 position = Vector2( 773, 449 )
 ship_name = "Bob"
+target_path = NodePath("../Ship")
+follow_offset = 100.0
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 3 )

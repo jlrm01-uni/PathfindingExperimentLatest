@@ -81,10 +81,12 @@ shape = SubResource( 1 )
 path_desired_distance = 10.0
 target_desired_distance = 20.0
 avoidance_enabled = true
+radius = 20.0
 max_speed = 500.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
+autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
@@ -95,4 +97,6 @@ anims/selected = SubResource( 5 )
 [connection signal="input_event" from="." to="." method="_on_Ship_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_Ship_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Ship_mouse_exited"]
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_NavigationAgent2D_navigation_finished"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_NavigationAgent2D_velocity_computed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
