@@ -13,6 +13,8 @@ var target_position = null
 onready var sprite = $ShipA
 export (float) var slow_radius = 200
 
+export (NodePath) var target_path = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	yield(owner, "ready")
